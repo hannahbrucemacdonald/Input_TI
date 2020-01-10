@@ -21,3 +21,15 @@ Input files: (temp_equi_1.in, temp_equi_2.in, temp_prod_1-7.in, temp_1ns_equi_1.
 
 Input files: (temp_equi_1_m.in, temp_equi_2.in, temp_prod_1-7.in, temp_1ns_equi_1_m.pbs, temp_1ns_equi_2.pbs, temp_1-7.pbs)  or (temp_equi_m.in, temp_prod_1-5.in, temp_1ns_equi_m.pbs, temp_1-5.pbs).
 
+# HBM
+
+Rotating "*merged.pdb" files to same frame of reference
+(in directory *_input/perses_files)
+1) load into pymol
+>> pymol ../*/*MD*/*merged.pdb 
+2) get a list of these files
+>> obj_list = cmd.get_names('all')
+3) Align them
+>> action > align > all to this (*/CA)
+4) Save them with new name
+>> [cmd.save(str(obj)+'align.pdb',obj) for obj in obj_list]
