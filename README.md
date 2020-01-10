@@ -26,10 +26,10 @@ Input files: (temp_equi_1_m.in, temp_equi_2.in, temp_prod_1-7.in, temp_1ns_equi_
 Rotating "*merged.pdb" files to same frame of reference
 (in directory *_input/perses_files)
 1) load into pymol
->> pymol ../*/*MD*/*merged.pdb 
+` pymol ../*/*MD*/*merged.pdb `
 2) get a list of these files
->> obj_list = cmd.get_names('all')
+` obj_list = cmd.get_names('all') `
 3) Align them
->> action > align > all to this (*/CA)
+` action > align > all to this (*/CA) `
 4) Save them with new name
->> [cmd.save(str(obj)+'align.pdb',obj) for obj in obj_list]
+` [cmd.save(str(obj)+'align.pdb',obj) for obj in obj_list] `
